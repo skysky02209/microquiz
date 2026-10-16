@@ -19,7 +19,7 @@ const shuf=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.random()*(
 const norm=s=>String(s).normalize('NFKC').toLowerCase().replace(/\(.*?\)/g,'').replace(/[\s\-–—_·.,'’"“”()\/\[\]:;!?~]/g,'');
 function isRight(c,input){
   const v=norm(input); if(!v) return false;
-  const opts=[c.name,...(c.alias||[])].map(norm);
+  const opts=[c.name,...(c.alias||[]),(window.PRON||{})[c.name]||''].filter(Boolean).map(norm);
   return opts.includes(v);
 }
 function toast(t){const el=document.getElementById('toast');el.textContent=t;el.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>el.classList.remove('show'),1500);}
@@ -490,5 +490,6 @@ function route(){
   window.scrollTo(0,0);
 }
 window.addEventListener('hashchange',route);
+if(window.annotateKo){ new MutationObserver(()=>{ if(window.__ann) return; window.__ann=1; try{window.annotateKo($app);}finally{window.__ann=0;} }).observe($app,{childList:true,subtree:true}); }
 route();
 })();

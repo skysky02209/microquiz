@@ -256,3 +256,12 @@ a.big{display:block}
 .essay{min-height:150px;resize:vertical;font-size:15px;line-height:1.6;font-family:inherit}
 .kw{margin-top:10px;font-size:12.5px;color:var(--sub);display:flex;flex-wrap:wrap;gap:4px;align-items:center}
 @media (max-width:380px){.ch-svg{width:80px;height:86px}.actor{width:80px}.prop{font-size:26px}}
+
+/* v3: 영어 한글 읽기 */
+.ko{font-size:.78em;font-weight:500;color:var(--sub);margin-left:1px;letter-spacing:-.2px}
+.bb .ko{color:#6b7a6d}
+.board .ko{color:#c5e1a5}
+.memo .ko{color:#8d6e63}
+.cover .ko,.hero .ko,.big .ko,.chip.on .ko,.chip.cok .ko,.chip.cno .ko,.toon-hero .ko{color:inherit;opacity:.8}
+.stem.term .ko{font-size:.6em}
+.pt td,.pt th{word-break:keep-all;overflow-wrap:anywhere}.pc{overflow-x:auto}
