@@ -113,5 +113,41 @@ window.TOON = [
  {t:'board',title:'강의 예제 (그대로 나올 수 있음)',html:`<p>유전자 A: 2kb, Read 10 / 유전자 B: 4kb, Read 20</p><p><b>RPK</b> → A = 10÷2 = <b>5</b>, B = 20÷4 = <b>5</b></p><p class="tip">→ Read 수는 2배 차이지만 길이를 보정하면 <b>발현량은 같다!</b></p>`},
  {t:'talk',bg:'#fce4ec',L:['kid','think'],R:['doc','sad'],prop:'🎰',lines:[['kid','P값 0.05 미만이면 유의한 거죠?'],['doc','유전자 <b>10,000개</b>를 0.05로 검정하면 차이가 하나도 없어도 <b>500개</b>가 우연히 유의해. 로또 500장 당첨 같은 거지.'],['doc','그래서 <b>FDR</b>을 <b>Benjamini–Hochberg</b>로 보정해!']]},
  {t:'fig',title:'Volcano plot 읽는 법',svg:'volcano',cap:'오른쪽 위 = 크게 증가 + 유의 / 왼쪽 위 = 크게 감소 + 유의 / 아래 가운데 = 변화 없음'}
+ ]},
+{ep:8, w:'1~7', title:'시험 전날 밤, 빈틈 메우기', sub:'1~7화에 없던 세부 내용 총정리', color:'#37474f', emoji:'🌙',
+ quiz:['Codon bias','Guilt-by-association','Strand-specific','길이 편향','Reference Mapping','Hybrid Assembler','False Positive'],
+ memo:['오류 = 실험적(PCR·GC·2차구조·프라이머) + 플랫폼 특이적(Illumina GC 불균일)','유전자 예측 방해: GC·Codon bias / 100aa 이하 / 겹침 / 다중 시작코돈(AUG·GUG·UUG)','중복 매핑 Read: 모두 빼면 과소평가, 모두 허용하면 과대평가','유의해도 Fold change 작으면 생물학적 의미 제한'],
+ panels:[
+ {t:'talk',bg:'#eceff1',L:['kid','sad'],R:['doc','cool'],prop:'🌙📚⏰',cap:'시험 전날 밤 11시',lines:[['kid','선배, 웹툰 7화까지 다 봤는데 강의노트 넘겨보니까 처음 보는 게 있어요…'],['doc','웹툰은 큰 줄기만 다뤘거든. 오늘은 <b>객관식 함정으로 잘 나오는 세부 내용</b>만 빠르게 훑자. 주차 순서대로 간다!']]},
+
+ {t:'board',title:'1주차 빈틈 · 종 개념 & 바코드 장단점',html:`<table><tr><th>종 개념</th><th>미생물에 어려운 이유</th></tr><tr><td>생물학적</td><td>무성생식</td></tr><tr><td>형태학적</td><td>형태 단순·환경 따라 변함 → 다양성 <b>과소평가</b></td></tr><tr><td>생태학적</td><td>특정 환경·기주 기준 → 폭넓게 적용 어려움</td></tr><tr><td class="hl">계통학적</td><td class="hl">✓ 적용 가능 / 단점: 종이 너무 많아짐, 과거·미래 진화 고려 X</td></tr></table>
+ <p class="tip">ITS 장점: 반복(Tandem) 다중 복사 → PCR 쉬움 · 단점: 분류군마다 차이 큼, 프라이머 편향</p>`},
+ {t:'board',title:'1주차 빈틈 · 숫자로 기억할 것',html:`<ul><li>바다 생물 질량의 <b>90%</b>가 미생물</li><li>인체 미생물 : 인체 세포 = 과거 10:1 → 최근 <b>약 1:1</b></li><li>미생물 역할: 발효·항생제(유익) / 식물·동물 질병 / <b>기회성 인체 병원균</b></li><li>자낭균 예: 효모, <b>페니실륨</b>(페니실린·치즈), <b>Neurospora</b>(유전학 모델)</li><li>담자균 예: 양송이, 옥수수 깜부기병균, 크립토코쿠스(인체 병원균)</li></ul>`},
+
+ {t:'talk',bg:'#e3f2fd',L:['doc','smile'],R:['kid','think'],prop:'🧪⚠️',lines:[['doc','2주차! 시퀀싱이 틀리는 이유는 두 종류야. <b>실험적 오류</b>랑 <b>플랫폼 특이적 오류</b>.'],['kid','실험적 오류는 PCR 증폭 편향 같은 거죠?'],['doc','응, 거기에 <b>GC content, 서열의 2차 구조, 프라이머 결합 차이</b>까지. 플랫폼 특이적은 Illumina가 <b>GC가 너무 높거나 낮은 곳</b>에서 Coverage가 고르지 않은 거야.']]},
+ {t:'board',title:'2주차 빈틈 · 디지털 생명정보 활용 4분야',html:`<table><tr><th>분야</th><th>핵심 기술</th></tr><tr><td>병원체 감시</td><td>AI 탐지(공항 검역), 유전체 감시, 실시간 데이터 공유</td></tr><tr><td>생명공학</td><td>AI 단백질 설계, CRISPR·합성생물학, 디지털 트윈</td></tr><tr><td class="hl">식물 건강 증진</td><td class="hl">정밀농업, 디지털 방제, 저항성 분석</td></tr><tr><td>생물다양성</td><td>AI 자동 종 동정, 디지털 저장소, <b>eDNA</b>(환경 DNA)</td></tr></table>
+ <p class="tip">HGP: Sanger로 500~800bp씩, <b>30-fold</b> 이상 읽어 <b>99.99%</b> 정확도 · 데이터 폭증 원인 4: 기술 발전 · 메타유전체 붐 · 공유 정책 · 정밀 연구 필요</p>`},
+
+ {t:'board',title:'3주차 빈틈 · 형식 세부',html:`<p><b>GFF 9칸 순서</b>: Seqid → Source → Type → Start → End → Score → Strand(+/−) → Phase(CDS면 0·1·2) → Attributes(ID·Name·Parent)</p>
+ <p><b>GenBank 7항목</b>: LOCUS → DEFINITION → ACCESSION/VERSION → SOURCE/ORGANISM → REFERENCE → FEATURES → ORIGIN</p>
+ <p class="tip">대장균 K-12: 4,641,652bp · 4,651 genes · 4,318 CDS / 효모 S288C 1번 염색체: 230,218bp · 101 genes</p>`},
+ {t:'talk',bg:'#fff8e1',L:['kid','wow'],R:['doc','smile'],prop:'🔁✅',lines:[['kid','데이터 재현성은 어떻게 확보해요?'],['doc','5개만 기억해. ① <b>실험 설계 단계부터</b> 기록 ② <b>Replicate와 양성·음성 대조군</b> ③ <b>오염 감지</b>(메타유전체는 특히) ④ 분석 프로그램·실행 환경 <b>공유·검증</b> ⑤ <b>Q30 초과</b> Read만 사용'],['doc','표준화된 Annotation이 필요한 이유는 <b>재현성·데이터 공유, 자동화·기계학습, FAIR</b>야.']]},
+
+ {t:'board',title:'4주차 빈틈 · 조립과 매핑',html:`<ul><li><b>버블</b> 원인: PCR 오류, 이형접합(Heterozygosity), 반복서열</li><li>오일러 경로를 못 찾는 이유: 해독 안 된 영역, <b>Read 부족</b>, 전처리 중 소실</li><li>반복서열 해결: 큰 k · <b>Paired-end</b> · Long read+OLC · PCR 사이클↓(Self-priming 억제)</li><li><b>Reference Mapping 순서</b>: 품질검사·트리밍 → 참조 Indexing → 정렬 → 중복 Read 표시 → SAM/BAM 정렬</li><li>참조와 너무 다르면 <b>De novo assembly 병행</b> / 메타유전체는 먼저 <b>Taxonomic Binning</b></li></ul>`},
+ {t:'talk',bg:'#f3e5f5',L:['doc','cool'],R:['kid','wow'],prop:'💊🦠',lines:[['doc','미생물 변이 사례 2개는 꼭! <b>결핵균</b>은 <b>rpoB 유전자의 SNV</b>만 찾으면 <b>Rifampicin 내성</b>을 진단해.'],['doc','<b>대장균 O157:H7</b>은 Shiga toxin 유전자를 가진 <b>Prophage의 삽입·결실(InDel)</b>로 구분하지.'],['kid','결핵균 = SNV, 대장균 = InDel!']]},
+
+ {t:'board',title:'5주차 빈틈 · 유전자 예측을 방해하는 것',html:`<table><tr><th>요소</th><th>내용</th></tr><tr><td>GC 함량·Codon bias</td><td>종마다 선호 코돈이 다름</td></tr><tr><td>짧은 유전자</td><td><b>100aa 이하</b>는 길이 기준에 걸려 누락</td></tr><tr><td>겹치는 유전자</td><td>세균은 유전체가 작아 겹침 많음 → Frame 혼동</td></tr><tr><td>다중 시작 코돈</td><td><b>AUG · GUG · UUG</b> 중 진짜 시작점 찾기</td></tr><tr><td>신호</td><td>RBS 위치, 프로모터</td></tr></table><p class="tip">원핵이 어려운 경우: 겹침, 전이인자, <b>HGT</b>로 다른 GC 패턴, RBS 없는 <b>고세균</b></p>`},
+ {t:'talk',bg:'#e8f5e9',L:['kid','think'],R:['doc','smile'],prop:'🧩',lines:[['kid','기능 예측 알고리즘도 종류가 있었죠?'],['doc','3개! ① <b>Sequence-based clustering</b>: 비슷한 서열끼리 묶어 대표의 기능을 추론. Markov Clustering의 inflation factor가 <b>낮으면 큰 덩어리, 높으면 잘게</b>.'],['doc','② <b>Domain-based</b>: Pfam·InterProScan ③ <b>Integrative</b>: 여러 정보 결합, "같은 pathway면 비슷한 기능" = <b>guilt-by-association</b>']]},
+ {t:'board',title:'5주차 빈틈 · 주의할 점',html:`<ul><li>같은 도메인이라도 일부 구조 변형으로 <b>기질 특이성</b>이 달라짐 → 도메인은 기능의 <b>범주</b>만 알려줌</li><li>서열·구조가 비슷해도 기능이 같다는 보장 X</li><li>GO 장점: 표준화된 Annotation · 마이크로바이옴 균주 간 비교 · <b>GO enrichment</b></li><li>GO는 계속 업데이트 → <b>버전</b>이 다르면 직접 비교 불가</li><li>살모넬라 <b>Type III secretion system</b> = 특정 Pfam 도메인으로 병원성 탐지</li></ul>`},
+
+ {t:'board',title:'6주차 빈틈 · DB 고르는 법 & 워크플로',html:`<p><b>DB 선택 기준 5</b>: ① 연구 가설·데이터 유형 ② 출처·범위 ③ <b>큐레이션 수준</b>(수동=정확·좁음 / 자동=넓음·오류 주의) ④ 접근성·서비스(API) ⑤ 표준 준수·재사용성</p>
+ <p><b>Snakemake 구성</b>: Rule(입력·출력·명령) · Wildcards(여러 파일 확장) · Dependency graph(<b>DAG</b>) · Execution engine(병렬)</p>
+ <p><b>설계 5원칙</b>: 모듈화 · 명확한 입출력 · 에러 처리·로깅 · 확장성·효율성 · 테스트·검증</p>
+ <p class="tip">컨테이너는 VM처럼 OS 전체를 복제하지 않고 <b>커널을 공유</b> → 가볍고 빠름 · 인간 유전체·임상 데이터는 <b>접근 권한·익명화</b></p>`},
+
+ {t:'talk',bg:'#ede7f6',L:['doc','think'],R:['kid','wow'],prop:'🧬↔️',lines:[['doc','7주차 매핑 함정! 여러 전사체가 Exon을 공유하면 Read가 엉뚱한 곳에 붙어.'],['doc','중복 매핑 Read를 <b>전부 빼면 과소평가</b>, <b>전부 허용하면 과대평가</b>야. 참조에 없는 전사체의 Read는 다른 전사체에 붙어 그쪽을 <b>과대평가</b>시키고.'],['kid','어느 쪽이든 조심해야 하는군요.']]},
+ {t:'board',title:'7주차 빈틈 · 라이브러리와 편향',html:`<table><tr><th>구분</th><th>내용</th></tr><tr><td>Strand-specific</td><td><b>dUTP</b>로 한 가닥 분해 → 전사 방향 유지</td></tr><tr><td>QC 도구·기준</td><td>Trimmomatic·Cutadapt / <b>30 base 미만</b>, 평균 <b>Q20·Q30 미만</b> 제거</td></tr><tr><td>참조 유전체 없음</td><td><b>De novo assembly</b> (높은 Depth 필요)</td></tr></table>
+ <p><b>편향의 영향 6가지</b>: 길이 편향(긴 유전자 과대) · 발현량 편향 · Read count bias · Dispersion bias · GO bias · Annotation bias(잘 알려진 유전자 편중)</p>`},
+ {t:'talk',bg:'#fce4ec',L:['doc','smile'],R:['kid','smile'],prop:'💯🎓',lines:[['doc','마지막! DEG는 <b>P value와 Fold change를 함께</b> 봐. 통계적으로 유의해도 <b>변화량이 작으면 생물학적 의미는 제한적</b>이야.'],['kid','이제 빈틈 없어요! 내일 시험 잘 볼게요!'],['doc','확인 문제 풀고 기록 탭에서 오답만 한 번 더 보고 자!']]}
  ]}
 ];
