@@ -273,7 +273,18 @@ function studyCard(){
     <div class="route-h"><b>📚 쉽게 공부하는 순서</b><span>${done}/${T.length}화 완료</span></div>
     <ol class="steps"><li class="${done?'ok':''}"><b>1. 웹툰으로 이해</b> 5분</li><li><b>2. 화 끝 3문제</b> 바로 확인</li><li><b>3. 유형별 훈련</b> 계산·서술형</li><li><b>4. 오답만 다시</b> 기록 탭</li></ol>
     <button class="big" data-go="toon/${nx.ep}">${done>=T.length?'🔁 다시 보기: ':'▶ 이어 보기: '}${nx.ep}화 「${esc(nx.title)}」</button>
+    <button class="big ghost" style="margin-top:8px" data-go="cards">📇 요약 카드 보기</button>
   </div>`;
+}
+
+const CARDS=[['00','🔥 찐핵심 15'],['01','1주 분류·진화·바코드'],['02','2주 시퀀싱·품질·빅데이터'],['03','3주 파일 형식·메타데이터'],['04','4주 BLAST·상동성·조립'],['05','5주 유전자 예측·기능'],['06','6주 데이터베이스·워크플로'],['07','7주 RNA-seq·발현 분석']];
+function cardsView(){
+  $app.innerHTML=`<section class="hero toon-hero"><small>시험 직전 벼락치기</small><h1>요약 카드</h1><p>빨간 글씨만 읽어도 됩니다 · 찐핵심 15부터</p></section>
+  <div class="chips">${CARDS.map(c=>`<button class="chip" data-j="${c[0]}">${c[0]==='00'?'찐핵심':(+c[0])+'주'}</button>`).join('')}</div>
+  ${CARDS.map(c=>`<h2 class="sec" id="c${c[0]}">${c[1]}</h2><img src="img/${c[0]}.png" alt="${c[1]}" loading="lazy" style="width:100%;border-radius:16px;display:block;box-shadow:0 2px 8px rgba(0,0,0,.08)">`).join('')}
+  <button class="big" style="margin-top:18px" data-go="home">🧩 퀴즈로 확인하기</button>`;
+  $app.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>{location.hash=b.dataset.go;});
+  $app.querySelectorAll('[data-j]').forEach(b=>b.onclick=()=>document.getElementById('c'+b.dataset.j).scrollIntoView({behavior:'smooth'}));
 }
 
 // ---------- 캐릭터 SVG ----------
@@ -486,7 +497,7 @@ function route(){
   Q=null;
   if(h.startsWith('toon/')){ toonView(+h.split('/')[1]); window.scrollTo(0,0); return; }
   if(h.startsWith('drill/')){ drill(h.split('/')[1]); window.scrollTo(0,0); return; }
-  ({home,dex,check,pairs,stats,toon:toonList}[h]||home)();
+  ({home,dex,check,pairs,stats,toon:toonList,cards:cardsView}[h]||home)();
   window.scrollTo(0,0);
 }
 window.addEventListener('hashchange',route);
