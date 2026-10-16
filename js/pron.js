@@ -55,7 +55,7 @@ window.PRON = {
       while((m=re.exec(t))){
         const end=m.index+m[0].length;
         // 이미 "(한글" 이 바로 뒤에 있으면 건너뛰기
-        if(/^\s*\([가-힣]/.test(t.slice(end))||seen.has(m[1])) continue; seen.add(m[1]);
+        if(t.slice(end).replace(/^\s*/,'').startsWith('('+window.PRON[m[1]])||seen.has(m[1])) continue; seen.add(m[1]);
         {const tn=document.createTextNode(t.slice(last,end)); DONE.add(tn); frag.appendChild(tn);}
         const s=document.createElement('span'); s.className='ko'; s.textContent='('+window.PRON[m[1]]+')'; frag.appendChild(s);
         last=end; changed=true;
