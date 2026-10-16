@@ -6,7 +6,7 @@
 window.TOON = [
 {ep:1, w:1, title:'미생물에도 이름표가 있다', sub:'분류 · 진화 · DNA 바코드', color:'#43a047', emoji:'🏷️',
  quiz:['병원형','난균류','16S rRNA 유전자','세포내공생설','Great Plate Count Anomaly'],
- memo:['pv.(병원형)=세균 / f. sp.(기주특화형)=곰팡이·난균','난균은 곰팡이 아님 → 부등편모류(미역 친척)','바코드: 세균 16S(97%) / 곰팡이 ITS'],
+ memo:['pv. = 세균 / f. sp. = 곰팡이·난균', '난균류는 곰팡이 아님 → 부등편모류 (역병균 Phytophthora)', '세포벽: 세균 펩티도글리칸 · 곰팡이 키틴 · 고세균 없음(Ether 막)', '미토콘드리아 ← 호기성 세균 · 엽록체 ← 시아노박테리아', '같은 종: DDH >70% · 16S 97% / 바코드: 세균 16S · 곰팡이 ITS'],
  panels:[
  {t:'talk',bg:'#e8f5e9',L:['kid','sad'],R:['doc','smile'],prop:'📚😵',cap:'시험 1주 전, 도서관',lines:[['kid','선배… 미생물 이름이 너무 길어요. Erwinia amylovora pv. pyri 이게 다 뭐예요?'],['doc','걱정 마! 사람 이름이랑 똑같아. 오늘은 <b>이름표 읽는 법</b>부터 가자.']]},
  {t:'talk',bg:'#fff8e1',L:['doc','cool'],R:['kid','think'],prop:'🪪',lines:[['doc','<b>이명법</b> = 성 + 이름. 미생물은 <b>속명 + 종명</b>이고, 항상 <i>기울여서</i> 써. 린네가 만들었지.'],['kid','아~ 홍길동처럼 Erwinia(성) amylovora(이름)!']]},
@@ -15,7 +15,7 @@ window.TOON = [
  <tr><td>분리주 Isolate</td><td>자연에서 막 분리한 집단</td></tr>
  <tr><td class="hl">병원형 <b>pv.</b></td><td class="hl"><b>세균</b>을 병원성으로 구분</td></tr>
  <tr><td class="hl">기주특화형 <b>f. sp.</b></td><td class="hl"><b>곰팡이·난균</b>을 기주로 구분</td></tr></table>
- <p class="tip">💡 "<b>p</b>v는 <b>박</b>테리아(세균), <b>f</b>.sp는 <b>f</b>ungi(곰팡이)"</p>`},
+ <p class="tip">pv. = <b>세균</b> / f. sp. = <b>곰팡이·난균</b> (형태 차이 없음)</p>`},
  {t:'talk',bg:'#e3f2fd',L:['kid','wow'],R:['doc','smile'],prop:'🍄❓🌊',lines:[['kid','고추역병균 Phytophthora는 곰팡이죠? 실처럼 생겼던데.'],['doc','함정! <b>난균류</b>는 겉모습만 곰팡이야. 유전자를 보니 <b>미역·규조류</b> 친척인 <b>부등편모류(Stramenopiles)</b>였어.']]},
  {t:'board',title:'세포벽으로 구별하기',html:`<table><tr><th></th><th>세포벽</th><th>특징</th></tr>
  <tr><td>세균</td><td class="hl">펩티도글리칸</td><td>두께로 그람 +/−</td></tr>
@@ -33,7 +33,7 @@ window.TOON = [
 
 {ep:2, w:2, title:'DNA를 읽는 기계의 진화', sub:'디지털화 · 시퀀싱 · 품질', color:'#1e88e5', emoji:'🧬',
  quiz:['Sanger Sequencing','Nanopore','Q30','Depth','FAIR 원칙'],
- memo:['Sanger(ddNTP) → Illumina(짧게 대량) → Nanopore(길게, 전압)','Q = −10log P, Q30 = 오류 0.1%','Depth=몇 번 읽었나 / Coverage=몇 % 읽었나'],
+ memo:['디지털 전환: Digitization → Digitalization → Digital Transformation', 'Sanger = ddNTP · Illumina = 150~300bp 대량 · Nanopore = 전압 변화, kb~Mb', 'Phred Q20 = 1% · Q30 = 0.1%', 'Depth = 몇 번(30x) / Coverage = 몇 %(95%)', 'GenBank 18개월마다 2배 · 비용 1억$(2001) → 500$(2023)'],
  panels:[
  {t:'talk',bg:'#e3f2fd',L:['doc','cool'],R:['kid','think'],prop:'📸➡️💾',cap:'회사 비유로 보는 디지털 전환',lines:[['doc','종이 사진을 스캔하면 <b>Digitization(변환)</b>, 업무를 자동화하면 <b>Digitalization(개선)</b>, 회사를 통째로 바꾸면 <b>Digital Transformation(혁신)</b>.'],['kid','변환 → 개선 → 혁신!']]},
  {t:'board',title:'생명정보학 연표',html:`<ul class="tl"><li><b>1953</b> DNA 이중나선 발견</li><li><b>1955</b> Sanger, 인슐린 서열 완성</li><li><b>1962</b> 분자시계 (Zuckerkandl & Pauling)</li><li>Dayhoff Atlas = <b>최초의 단백질 DB</b> (65개)</li><li><b>1990~2003</b> 인간게놈프로젝트 (30억 염기)</li></ul>`},
@@ -49,7 +49,7 @@ window.TOON = [
 
 {ep:3, w:3, title:'파일에도 형식이 있다', sub:'FASTA · FASTQ · GFF · 메타데이터', color:'#fb8c00', emoji:'📄',
  quiz:['FASTQ','GFF','메타데이터','MIxS','MINSEQE'],
- memo:['FASTA = > 이름 + 서열 / FASTQ = @ · 서열 · + · 품질 (4줄)','GFF = 9칸, 서열 없음, Parent 있음 / GenBank = 서열 있음(ORIGIN), 사람용','MIxS(GSC, 환경 17) / MINSEQE(FGED, 5요소)'],
+ memo:['FASTA 2줄(>이름 / 서열) · FASTQ 4줄(@ID · 서열 · + · 품질)', 'Illumina는 뒤쪽 품질↓ → Trimming', 'GFF = 탭 9칸, 서열 없음 / GenBank = 서열 있음(ORIGIN)', 'MIxS = GSC, 환경 17개 / MINSEQE = FGED, 5요소', 'SRA 중 상세 프로토콜 포함은 단 4%'],
  panels:[
  {t:'talk',bg:'#fff3e0',L:['kid','think'],R:['doc','smile'],prop:'🗂️',lines:[['kid','서열 파일은 그냥 ATGC 나열 아니에요?'],['doc','이름표를 붙이는 규칙이 있어. 제일 간단한 게 <b>FASTA</b>: <b>&gt;이름</b> 한 줄 + 서열. 숫자나 공백은 금지!']]},
  {t:'fig',title:'FASTA vs FASTQ',svg:'fastq',cap:'FASTQ는 서열 + 성적표(품질). 품질 문자는 ASCII 33(!)~126(~)'},
@@ -62,7 +62,7 @@ window.TOON = [
 
 {ep:4, w:4, title:'닮았다고 가족은 아니다', sub:'BLAST · 상동성 · 조립 · 변이', color:'#8e24aa', emoji:'🔍',
  quiz:['E-value','상동성','Paralog','N50','Transition'],
- memo:['E-value 작을수록 유의 (1e-5 미만)','유사성=수치 / 상동성=예·아니오','Ortholog=종 분화 / Paralog=종 안 중복','N50=절반 넘는 순간의 Contig 길이, L50=그 개수'],
+ memo:['BLAST: 단어 → Hit → 확장(HSP) → Gap → 점수 · 단어 DNA 11, 단백질 3', 'Bit score 클수록 좋음 · E-value 작을수록 유의', '유사성 = 정량(%) / 상동성 = 정성(예/아니오)', 'Ortholog = 다른 종(종 분화) / Paralog = 같은 종(중복)', 'N50 = 길이 · L50 = 개수 / De Bruijn = 짧은 Read · OLC = 긴 Read'],
  panels:[
  {t:'talk',bg:'#f3e5f5',L:['kid','think'],R:['doc','cool'],prop:'🔍📚',lines:[['kid','새 유전자를 찾으면 뭐부터 해요?'],['doc','<b>BLAST</b>로 "비슷한 거 있나?" 검색! 문장을 <b>단어로 쪼개고</b>, 같은 단어를 찾은 다음 <b>양옆으로 넓혀</b>가는 방식이라 빨라.']]},
  {t:'fig',title:'BLAST 작동 순서',svg:'blast',cap:'단어(Word) → Hit → 확장(HSP) → Gap 허용 → 점수(Bit score, E-value)'},
@@ -77,7 +77,7 @@ window.TOON = [
 
 {ep:5, w:5, title:'유전자 찾기 대작전', sub:'ORF · 유전자 예측 · GO · 도메인', color:'#e53935', emoji:'🕵️',
  quiz:['ORF','Polycistronic','Ab initio','Molecular Function','Ortholog conjecture'],
- memo:['ORF = ATG ~ 종결코돈, Reading frame 6개','원핵: RBS·Shine-Dalgarno·Polycistronic / 진핵: Kozak·Exon-Intron','GO = MF(무슨 일) · BP(어떤 과정) · CC(어디서)'],
+ memo:['ORF = ATG ~ TAA·TAG·TGA · Frame 6개', '원핵 = 연속·Shine-Dalgarno / 진핵 = Exon+Intron·Kozak', '예측: Ab initio(서열만) · Homology(비교) · Evidence(RNA-seq)', 'GO = BP 과정 · MF 활동 · CC 위치', 'Pfam = HMM 기반 · Prokka 원핵 · eggNOG Ortholog'],
  panels:[
  {t:'talk',bg:'#ffebee',L:['doc','cool'],R:['kid','think'],prop:'📝',lines:[['doc','DNA는 3글자씩 끊어 읽어. 문장의 시작 <b>ATG</b>부터 마침표 <b>TAA·TAG·TGA</b>까지가 <b>ORF</b>야.'],['kid','어디서부터 끊느냐에 따라 3가지, 반대 가닥까지 하면…'],['doc','<b>6개 Reading frame</b>! 시험 단골이야.']]},
  {t:'fig',title:'원핵 vs 진핵 유전자',svg:'genes',cap:'원핵은 쭉 이어진 코딩, 진핵은 Exon 사이에 Intron(광고)이 끼어 있어 예측이 어렵다'},
@@ -91,7 +91,7 @@ window.TOON = [
 
 {ep:6, w:6, title:'데이터 도서관과 자동 공장', sub:'데이터베이스 · 병원체 DB · 워크플로', color:'#00897b', emoji:'🏛️',
  quiz:['1차 데이터베이스','Swiss-Prot','PHI-base','Snakemake','Singularity'],
- memo:['1차(원재료): GenBank·ENA·DDBJ·SRA·PDB / 2차(요리): UniProt·Pfam·KEGG','Swiss-Prot=사람 검수 57만 / TrEMBL=자동 2.5억','Docker=Root 필요 / Singularity=HPC용'],
+ memo:['1차 DB = GenBank·ENA·DDBJ·SRA·PDB / 2차 = UniProt·Pfam·InterPro·KEGG', 'Swiss-Prot = 수동 / TrEMBL = 자동', 'VFDB = 세균 병원성 요인 / PHI-base = 기주–병원체 상호작용', 'Conda = 환경 분리 · Docker = Root 필요 · Singularity = HPC'],
  panels:[
  {t:'talk',bg:'#e0f2f1',L:['doc','smile'],R:['kid','think'],prop:'🥕➡️🍲',lines:[['doc','<b>1차 DB</b>는 산지 직송 원재료 창고, <b>2차 DB</b>는 전문가가 요리한 음식이야.'],['kid','원재료는 GenBank, 요리는 UniProt!']]},
  {t:'board',title:'1차 vs 2차 데이터베이스',html:`<table><tr><th>1차 (원본)</th><th>2차 (큐레이션)</th></tr><tr><td>GenBank · ENA · DDBJ<br><small>= INSDC로 동기화</small></td><td>UniProtKB (Swiss-Prot + TrEMBL)</td></tr><tr><td>SRA (Read 저장)</td><td>Pfam · InterPro (도메인)</td></tr><tr><td>PDB (3차 구조)</td><td>KEGG · BioCyc (대사경로)</td></tr></table><p class="tip">RefSeq = GenBank에서 대표만 골라 재정리 → 딱 잘라 1차라고 하기 어려움</p>`},
@@ -103,7 +103,7 @@ window.TOON = [
 
 {ep:7, w:7, title:'세포의 오늘 일기 읽기', sub:'RNA-seq · 정규화 · 차등발현', color:'#5e35b1', emoji:'📔',
  quiz:['전사체','Batch effect','TPM','FDR','Volcano plot'],
- memo:['생물학적 반복 > 기술적 반복, Batch effect → 무작위화','RPKM(Single)·FPKM(Paired) / TPM = 길이 먼저, 샘플 비교 최적','10,000 × 0.05 = 500개 가짜 → FDR(Benjamini–Hochberg)','Volcano: X=log2FC, Y=−log10 P'],
+ memo:['생물학적 반복 > 기술적 반복 · Batch effect → 무작위화', 'RPKM(Single-end) · FPKM(Paired-end) · TPM = 샘플 비교 최적', '1만 × 0.05 = 500개 가짜 → Benjamini–Hochberg', 'Volcano: X = log2 FC · Y = −log10 P', '유의해도 Fold change 작으면 의미 제한'],
  panels:[
  {t:'talk',bg:'#ede7f6',L:['doc','smile'],R:['kid','think'],prop:'📕📖',lines:[['doc','유전체(DNA)가 요리책 전체라면, <b>전사체(RNA)</b>는 <b>지금 펼쳐 놓은 레시피</b>야. 세포가 지금 뭘 하는지 알 수 있지.'],['kid','그걸 읽는 게 RNA-seq!'],['doc','옛날엔 Probe에 의존하는 <b>Microarray</b>를 썼는데, RNA-seq는 <b>새 전사체까지</b> 찾아.']]},
  {t:'fig',title:'RNA-seq 8단계',svg:'rnaseq',cap:'설계 → 시퀀싱 → 품질관리 → 매핑 → 정량 → 차등발현 → 기능분석 → 시각화 (순서 문제 대비!)'},
